@@ -20,5 +20,17 @@ function renderGuesses(){
             console.log("\nYou have: " + guessesLeft + "guesses remaining!\n");
             renderGuesses();
         }
+        else {
+            userGuessed.push(response.userGuess)
+            var guess = response.userGuess;
+            var correctGuess = word.guess(guess);
+            var displaying = word.
+        }
     })
 }
+
+function renderWord() {
+    var wordListing = Math.floor(Math.random() * randomWords.length);
+    return new Word (randomWords[wordListing]);
+}
+
