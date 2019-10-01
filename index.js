@@ -15,6 +15,7 @@ var guessing = [{
 function renderGuesses(){
     inquirer.prompt(question).then(function(response){
         if(userGuessed.includes(response.userGuess)){
+            console.log("\n---------------------------------------------------------------------\n");
             console.log("You have already guessed the letter: " + response.userGuess + "...try another letter guess!\n");
             console.log("\n---------------------------------------------------------------------\n");
             console.log("\nYou have: " + guessesLeft + "guesses remaining!\n");
@@ -24,7 +25,7 @@ function renderGuesses(){
             userGuessed.push(response.userGuess)
             var guess = response.userGuess;
             var correctGuess = word.guess(guess);
-            var displaying = word.
+            
         }
     })
 }
@@ -34,3 +35,23 @@ function renderWord() {
     return new Word (randomWords[wordListing]);
 }
 
+function renderGame() {
+    inquirer.prompt([{
+        type: "confirm",
+        name: "newGame",
+        message: "New game?"
+    }])
+    .then(function(response){
+        if(response.newGame === true) {
+            word = renderWord();
+            guessesLeft = 10;
+            userGuessed = [];
+            console.log(word.wordDisplay().join(" "))
+            console.log("You have: " + guessesLeft + "guesses remaining!\n");
+            renderGuesses();
+        }
+        else{
+            console.log("Good game! Play again?")
+        }
+    })
+}
