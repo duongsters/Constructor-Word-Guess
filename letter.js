@@ -10,6 +10,11 @@ function Letter(letter) {
             return this.letter;
         }
     }
+    this.check = function(response) {
+        if(response === this.letter) {
+            this.userGuess = true;
+            return true;
+        }
+    }
 }
-
-this.
+module.export = Letter;

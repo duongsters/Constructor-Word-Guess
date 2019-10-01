@@ -5,7 +5,7 @@ var Word = require("./word.js")
 
 var userGuessed= [];
 var guessesLeft = 10;
-var word = renderWord();
+var word = randomWord();
 
 var guessing = [{
     type:"input",
@@ -31,9 +31,9 @@ function renderGuesses(){
     })
 }
 
-function renderWord() {
+function randomWord() {
     var wordListing = Math.floor(Math.random() * randomWords.length);
-    return new Word (randomWords[wordListing]);
+    return new Word(randomWords[wordListing]);
 }
 
 function renderGame() {
@@ -44,7 +44,7 @@ function renderGame() {
     }])
     .then(function(response){
         if(response.newGame === true) {
-            word = renderWord();
+            word = randomWord();
             guessesLeft = 10;
             userGuessed = [];
             console.log(word.wordDisplay().join(" "))

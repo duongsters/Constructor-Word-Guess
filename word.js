@@ -1,12 +1,11 @@
 var Letter = require("./letter.js");
 
 function Word(word) {
-    var splitChar = word.split(" ");
+    var splitChar = word.split("");
     var wordArr = [];
 
     splitChar.forEach(function(element){
-
-        var char = new Letter(element)
+        var letter = new Letter(element)
         wordArr.push(letter)
     })
     this.wordStr = word;
