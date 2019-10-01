@@ -18,7 +18,7 @@ function renderGuesses(){
             console.log("You have already guessed the letter: " + response.userGuess + "...try another letter guess!\n");
             console.log("\n---------------------------------------------------------------------\n");
             console.log("\nYou have: " + guessesLeft + "guesses remaining!\n");
-            
+            renderGuesses();
         }
     })
 }
