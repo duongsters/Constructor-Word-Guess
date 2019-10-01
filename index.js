@@ -5,6 +5,7 @@ var Word = require("./word.js")
 
 var userGuessed= [];
 var guessesLeft = 10;
+var word = renderWord();
 
 var guessing = [{
     type:"input",
