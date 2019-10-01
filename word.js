@@ -1,7 +1,7 @@
 var Letter = require("./letter.js");
 
 function Word(word) {
-    var splitChar = word.split("");
+    var splitChar = word.split('');
     var wordArr = [];
 
     splitChar.forEach(function(element){

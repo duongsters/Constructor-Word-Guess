@@ -11,6 +11,15 @@ var guessing = [{
     type:"input",
     name:"userGuess",
     message: "Guess a letter..from A to Z!",
+    validate: function(input) {
+        if((input.length ===1) && !(Number(input))){
+            return true;
+        }
+        else {
+            console.log("\n");
+            return false;
+        }
+    }
 }]
 
 function renderGuesses(){
