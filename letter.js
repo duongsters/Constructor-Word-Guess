@@ -11,3 +11,5 @@ function Letter(letter) {
         }
     }
 }
+
+this.
